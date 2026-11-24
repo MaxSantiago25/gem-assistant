@@ -1,0 +1,121 @@
+ui-button {
+  display: inline-flex;
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft),
+              border-color var(--dur-fast) var(--ease-soft),
+              color var(--dur-fast) var(--ease-soft),
+              transform var(--dur-fast) var(--ease-soft);
+  user-select: none;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ui-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.ui-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Tamaños (sm, md, lg)
+   ========================================================================== */
+.ui-btn--sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: 12px;
+  height: 28px;
+}
+
+.ui-btn--md {
+  padding: var(--space-2) var(--space-3);
+  font-size: 13px;
+  height: 36px;
+}
+
+.ui-btn--lg {
+  padding: var(--space-3) var(--space-4);
+  font-size: 14px;
+  height: 44px;
+}
+
+/* ==========================================================================
+   Variantes (primary, ghost, icon)
+   ========================================================================== */
+/* Primary: usa --color-accent (vivid purple) */
+.ui-btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border-color: transparent;
+}
+
+.ui-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+/* Ghost: transparente con hover sobre superficie */
+.ui-btn--ghost {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: transparent;
+}
+
+.ui-btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+}
+
+/* Outline / Surface */
+.ui-btn--surface {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.ui-btn--surface:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-text-muted);
+}
+
+/* Icon-only button */
+.ui-btn--icon {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border-color: transparent;
+  padding: 0;
+  border-radius: var(--radius-sm);
+}
+
+.ui-btn--icon.ui-btn--sm {
+  width: 28px;
+  height: 28px;
+}
+
+.ui-btn--icon.ui-btn--md {
+  width: 36px;
+  height: 36px;
+}
+
+.ui-btn--icon.ui-btn--lg {
+  width: 44px;
+  height: 44px;
+}
+
+.ui-btn--icon:hover:not(:disabled) {
+  color: var(--color-text);
+  background-color: var(--color-surface-hover);
+}
+

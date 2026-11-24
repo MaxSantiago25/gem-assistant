@@ -1,0 +1,37 @@
+{
+  "profiles": {
+    "rapido": {
+      "provider": "llamacpp",
+      "model": "gemma-4-E4B-it-qat",
+      "ctx": 8192,
+      "thinking": false
+    },
+    "herramientas": {
+      "provider": "llamacpp",
+      "model": "qwen3.5-9b",
+      "ctx": 8192,
+      "thinking": false
+    },
+    "nube": {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash"
+    }
+  },
+  "routing": {
+    "chat": "rapido",
+    "redaccion": "rapido",
+    "acciones_pc": "herramientas",
+    "tareas": "herramientas",
+    "correo_resumen": "rapido"
+  },
+  "privacy": {
+    "correo": "solo_local",
+    "mipc": "solo_local",
+    "chat": "nube_con_permiso"
+  },
+  "escalation": {
+    "max_retries_same_model": 1,
+    "escalate_to": ["nube"]
+  }
+}
+

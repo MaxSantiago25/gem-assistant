@@ -1,0 +1,40 @@
+/* Componente modular <ui-thinking-orb> — Esfera de pensamiento animada (manchas que se alejan y se acercan) */
+
+ui-thinking-orb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.thinking-orb {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thinking-orb--sm {
+  width: 28px;
+  height: 28px;
+}
+
+.thinking-orb--md {
+  width: 44px;
+  height: 44px;
+}
+
+.thinking-orb--lg {
+  width: 64px;
+  height: 64px;
+}
+
+.thinking-orb-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+

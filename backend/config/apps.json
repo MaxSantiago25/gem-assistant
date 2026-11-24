@@ -1,0 +1,9 @@
+{
+  "apps": {
+    "chrome": {
+      "name": "Google Chrome",
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "allowed_args": []
+    }
+  }
+}

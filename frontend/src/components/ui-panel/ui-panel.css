@@ -1,0 +1,33 @@
+ui-panel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.ui-panel {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.ui-panel--padding-sm {
+  padding: var(--space-3);
+}
+
+.ui-panel--padding-md {
+  padding: var(--space-5);
+}
+
+.ui-panel--padding-lg {
+  padding: var(--space-6);
+}
+
+.ui-panel--padding-none {
+  padding: 0;
+}
+

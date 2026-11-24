@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Gem",
+  "version": "0.1.0",
+  "identifier": "com.island.agent",
+  "build": {
+    "devUrl": "http://127.0.0.1:3000",
+    "frontendDist": "../frontend"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "island",
+        "title": "Gem",
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": false,
+        "resizable": false,
+        "shadow": false,
+        "visible": true,
+        "width": 360,
+        "height": 80
+      }
+    ]
+  }
+}

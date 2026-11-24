@@ -1,0 +1,35 @@
+# Entorno y datos locales
+data/
+*.db
+*.sqlite3
+*.log
+*.gguf
+
+# Carpetas locales de modelos y contexto base
+AiModels/
+Context/
+
+# Capturas y archivos temporales
+preview-*.png
+screenshot_*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/gen/
+
+# Node
+node_modules/
+dist/
+
+# IDE y SO
+.DS_Store
+Thumbs.db

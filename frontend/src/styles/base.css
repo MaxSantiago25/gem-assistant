@@ -1,0 +1,93 @@
+/* Reset y estilos base del sistema */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Tipografía jerárquica */
+h1,
+h2,
+h3,
+h4,
+.brand-title {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+button,
+input,
+textarea,
+select,
+.ui-label {
+  font-family: var(--font-ui);
+}
+
+.tabular-numbers {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-ui);
+}
+
+/* Selección */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Scrollbar estilizado*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Contenedor viewport raíz */
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--space-3);
+  pointer-events: none;
+  /* Solo la isla captura eventos */
+}
+
+/* Foco accesible */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

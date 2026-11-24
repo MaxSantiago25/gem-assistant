@@ -1,0 +1,35 @@
+{
+  "permitted_zones": [
+    "%USERPROFILE%\\Downloads",
+    "%USERPROFILE%\\Documents",
+    "%USERPROFILE%\\Desktop"
+  ],
+  "forbidden_zones": [
+    "C:\\Windows",
+    "C:\\Program Files",
+    "C:\\Program Files (x86)",
+    "C:\\ProgramData",
+    "%USERPROFILE%\\.ssh",
+    "%APPDATA%\\IslandAgent"
+  ],
+  "blocked_extensions": [
+    ".exe",
+    ".bat",
+    ".cmd",
+    ".ps1",
+    ".msi",
+    ".vbs",
+    ".scr",
+    ".js",
+    ".lnk",
+    ".com",
+    ".dll"
+  ],
+  "limits": {
+    "max_batch_operations": 50,
+    "max_hourly_operations": 100
+  },
+  "auto_approve": {
+    "fs_mkdir": false
+  }
+}

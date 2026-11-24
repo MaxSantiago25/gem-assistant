@@ -1,0 +1,9 @@
+# Tareas — Spec 003: Chat Real con IA y Widget de Confirmación
+
+- [x] **T-01** (CA-1): Configurar `devUrl` en `src-tauri/tauri.conf.json`, `custom-protocol` y mejorar `src-tauri/src/lib.rs` (`show`, `set_always_on_top`, `set_focus`, dimensiones `360x80` / `960x620`).
+- [x] **T-02** (CA-1): Actualizar `frontend/src/core/tauri-bridge.js` para invocar el comando nativo `set_island_expanded` de Tauri y redimensionar la ventana flotante de escritorio sin perder la posición superior central.
+- [x] **T-03** (CA-2, CA-3): Implementar `backend/app/agent/orchestrator.py` con enrutamiento por perfil (`rapido`, `herramientas`, `nube`), llamada a `LlamaCppProvider`, extracción y validación de herramientas con `HarnessExecutor` y almacenamiento de lotes pendientes de confirmación.
+- [x] **T-04** (CA-2, CA-4, CA-5): Crear `backend/app/api/chat.py` con los endpoints `POST /api/v1/chat`, `POST /api/v1/actions/{batch_id}/confirm`, `POST /api/v1/actions/{batch_id}/reject` y `POST /api/v1/actions/{batch_id}/undo`, y registrarlo en `backend/app/main.py`.
+- [x] **T-05** (CA-4, CA-5, CA-6): Mejorar `frontend/src/components/ui-confirmation-card/ui-confirmation-card.js` y `.css` eliminando cualquier color hex suelto, soportando lotes de operaciones y estados interactivos (Pendiente, Ejecutando, Aprobado con botón Deshacer, Cancelado).
+- [x] **T-06** (CA-2, CA-4, CA-5, CA-6): Implementar `frontend/src/modules/chat/chat-view.js` y `frontend/src/modules/chat/chat-view.css` (e importarlo en `index.html`) con historial real, envío de mensajes, selector de perfil, chips de prueba rápida y widget de confirmación integrado.
+- [x] **T-07** (CA-1..CA-6): Compilar Tauri, ejecutar pruebas de backend (`pytest`), reindexar `codebase-memory-mcp` y levantar la aplicación nativa en escritorio junto con el backend y `llama-server`.

@@ -1,0 +1,43 @@
+/* Componente modular <ui-leopard> — Emblema oficial de Gem */
+
+ui-leopard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.leopard-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: transform var(--dur-base) var(--ease-mac);
+}
+
+.leopard-avatar--sm {
+  width: 28px;
+  height: 28px;
+}
+
+.leopard-avatar--md {
+  width: 34px;
+  height: 34px;
+}
+
+.leopard-avatar--lg {
+  width: 54px;
+  height: 54px;
+}
+
+.leopard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+}

@@ -1,0 +1,122 @@
+ui-confirmation-card {
+  display: block;
+  width: 100%;
+}
+
+.confirmation-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  transition: border-color var(--dur-base) var(--ease-mac),
+              background-color var(--dur-base) var(--ease-mac),
+              opacity var(--dur-base) var(--ease-mac);
+  animation: module-in var(--dur-base) var(--ease-mac) forwards;
+}
+
+.confirmation-card--done {
+  border-left-color: var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-surface), var(--color-accent) 8%);
+}
+
+.confirmation-card--rejected {
+  border-left-color: var(--color-text-muted);
+  opacity: 0.72;
+}
+
+.confirmation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.confirmation-title-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.confirmation-title {
+  font-family: var(--font-brand);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.confirmation-icon {
+  color: var(--color-accent);
+}
+
+.confirmation-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  background-color: color-mix(in srgb, var(--color-bg), var(--color-surface) 50%);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+  word-break: break-all;
+}
+
+.confirmation-op-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.confirmation-op-item + .confirmation-op-item {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.confirmation-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.confirmation-label {
+  color: var(--color-text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-brand);
+}
+
+.confirmation-path {
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 12px;
+}
+
+.confirmation-arrow {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.confirmation-report {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.confirmation-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}

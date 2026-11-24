@@ -1,0 +1,231 @@
+ui-island {
+  display: block;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ==========================================================================
+   Contenedor principal de la Isla Dinámica
+   ========================================================================== */
+.island-container {
+  position: relative;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.65),
+              0 0 0 1px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  box-sizing: border-box;
+  transform-origin: top center;
+  transition: width var(--dur-slow) var(--ease-mac),
+              height var(--dur-slow) var(--ease-mac),
+              border-radius var(--dur-slow) var(--ease-mac),
+              clip-path var(--dur-slow) var(--ease-mac),
+              box-shadow var(--dur-slow) var(--ease-mac),
+              border-color var(--dur-fast) var(--ease-soft);
+}
+
+/* ==========================================================================
+   ESTADO: Colapsado (Forma Trapezoide)
+   ========================================================================== */
+.island-container--collapsed {
+  width: var(--island-pill-width);
+  height: var(--island-pill-height);
+  border-radius: var(--radius-md);
+  clip-path: polygon(18px 0%, calc(100% - 18px) 0%, 100% 100%, 0% 100%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-5);
+  user-select: none;
+}
+
+.island-container--collapsed:hover {
+  background-color: var(--color-surface);
+  border-color: color-mix(in srgb, var(--color-border), var(--color-accent) 40%);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7),
+              0 0 16px -4px var(--color-accent-subtle);
+}
+
+/* Elementos internos de la píldora */
+.pill-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pill-agent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: pulse-glow 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 12px var(--color-accent);
+  }
+}
+
+.pill-title {
+  font-family: var(--font-brand);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.pill-status {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.pill-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   ESTADO: Expandido (Panel dividido en dos partes)
+   ========================================================================== */
+.island-container--expanded {
+  width: var(--island-panel-width);
+  height: var(--island-panel-height);
+  border-radius: var(--radius-lg);
+  clip-path: none;
+  display: flex;
+  cursor: default;
+}
+
+/* Columna Izquierda: Navegación (~220 px) */
+.island-sidebar {
+  width: var(--nav-width);
+  min-width: var(--nav-width);
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) var(--space-3);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.island-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-2) var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-3);
+}
+
+.island-brand-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.island-brand-name {
+  font-family: var(--font-brand);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.island-brand-icon {
+  color: var(--color-accent);
+}
+
+/* Lista de navegación */
+.island-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.island-sidebar-footer {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Columna Derecha: Contenido del módulo activo */
+.island-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: color-mix(in srgb, var(--color-bg), var(--color-text) 2%);
+}
+
+.island-main-header {
+  height: 52px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-5);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background-color: var(--color-bg);
+}
+
+.island-module-title {
+  font-family: var(--font-brand);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.island-main-content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Transición suave de contenido (CA-7: fundido + desplazamiento 8px) */
+.module-transition-enter {
+  animation: module-in var(--dur-base) var(--ease-mac) forwards;
+}
+
+@keyframes module-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Backdrop de captura para clic fuera (CA-8)
+   ========================================================================== */
+.island-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  pointer-events: auto;
+}
+

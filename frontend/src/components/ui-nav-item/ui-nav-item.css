@@ -1,0 +1,80 @@
+ui-nav-item {
+  display: block;
+  width: 100%;
+}
+
+.ui-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft),
+              color var(--dur-fast) var(--ease-soft),
+              border-color var(--dur-fast) var(--ease-soft);
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.ui-nav-item:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.ui-nav-item ui-icon {
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.ui-nav-item:hover ui-icon {
+  color: var(--color-text);
+}
+
+/* Estado activo: fondo --color-surface y icono en --color-accent (vivid purple) */
+.ui-nav-item--active {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  border-color: var(--color-border);
+}
+
+.ui-nav-item--active ui-icon {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Variante Especial: Salir / Logout (CA-6)
+   "Sin apariencia de botón (sin relleno ni borde), integrado al fondo,
+    solo icono + texto en --color-text-muted y leve tinte --color-surface-hover"
+   ========================================================================== */
+.ui-nav-item--logout {
+  background: transparent !important;
+  border: none !important;
+  color: var(--color-text-muted);
+  margin-top: auto;
+  opacity: 0.85;
+}
+
+.ui-nav-item--logout:hover {
+  background-color: var(--color-surface-hover) !important;
+  color: var(--color-text) !important;
+  opacity: 1;
+}
+
+.ui-nav-item--logout ui-icon {
+  color: var(--color-text-muted);
+}
+
+.ui-nav-item--logout:hover ui-icon {
+  color: var(--color-text);
+}
+
